@@ -64,12 +64,14 @@ export default function MessageBubble({
 
         {/* Thinking/reasoning block */}
         {thinking && (
-          <div className={cn(
-            "rounded-xl border overflow-hidden transition-colors duration-300",
-            isThinkingActive
-              ? "border-violet-500/40 bg-violet-950/30"
-              : "border-zinc-800 bg-zinc-900/50"
-          )}>
+          <div
+            className={cn(
+              "rounded-xl border overflow-hidden transition-colors duration-300",
+              isThinkingActive
+                ? "border-violet-500/40 bg-violet-950/30"
+                : "border-zinc-800 bg-zinc-900/50",
+            )}
+          >
             <button
               onClick={() => setThinkingExpanded(!thinkingExpanded)}
               className="flex items-center gap-2 w-full px-3 py-2 text-xs text-zinc-400 hover:text-zinc-300 hover:bg-zinc-800/50 transition-colors"
@@ -78,7 +80,7 @@ export default function MessageBubble({
                 size={14}
                 className={cn(
                   "text-violet-400",
-                  isThinkingActive && "animate-pulse"
+                  isThinkingActive && "animate-pulse",
                 )}
               />
               <span className="font-medium">
@@ -86,9 +88,18 @@ export default function MessageBubble({
                   <span className="flex items-center gap-1.5">
                     Reasoning
                     <span className="inline-flex gap-0.5">
-                      <span className="w-1 h-1 rounded-full bg-violet-400 animate-bounce" style={{ animationDelay: "0ms" }} />
-                      <span className="w-1 h-1 rounded-full bg-violet-400 animate-bounce" style={{ animationDelay: "150ms" }} />
-                      <span className="w-1 h-1 rounded-full bg-violet-400 animate-bounce" style={{ animationDelay: "300ms" }} />
+                      <span
+                        className="w-1 h-1 rounded-full bg-violet-400 animate-bounce"
+                        style={{ animationDelay: "0ms" }}
+                      />
+                      <span
+                        className="w-1 h-1 rounded-full bg-violet-400 animate-bounce"
+                        style={{ animationDelay: "150ms" }}
+                      />
+                      <span
+                        className="w-1 h-1 rounded-full bg-violet-400 animate-bounce"
+                        style={{ animationDelay: "300ms" }}
+                      />
                     </span>
                   </span>
                 ) : (
@@ -106,7 +117,9 @@ export default function MessageBubble({
             <div
               className={cn(
                 "overflow-hidden transition-all duration-300 ease-in-out",
-                thinkingExpanded ? "max-h-125 opacity-100" : "max-h-0 opacity-0"
+                thinkingExpanded
+                  ? "max-h-125 opacity-100"
+                  : "max-h-0 opacity-0",
               )}
             >
               <div className="px-3 pb-3 text-xs text-zinc-400 leading-relaxed overflow-y-auto max-h-115 border-t border-zinc-800/50">
@@ -163,7 +176,9 @@ export default function MessageBubble({
                 style={{ animationDelay: "300ms" }}
               />
             </span>
-            <span className="text-violet-400/70">Processing in background...</span>
+            <span className="text-violet-400/70">
+              Processing in background...
+            </span>
           </div>
         )}
       </div>
